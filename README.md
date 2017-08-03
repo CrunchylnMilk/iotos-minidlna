@@ -31,7 +31,7 @@ Variables:
 <path_to_seccomp_profile.json> = the path on the host to the seccomp profile ending in .json
 
 Seccomp profile:
-With the loss of public Grsecurity, there is almost no other mechanism available to protect the kernel. Not even selinux can protect against many kernel exploits, which makes reducing the attack surface area more important than ever. The default docker profile reduces 350+ available system calls to 308, with many of the 42 dropped calls being added again based on set capabilities. The profile provided here is hand made, and reduces 350+ available system calls to 64, without the capability loophole. One caveat is that I have no way to test this profile with Arm/Arm64 hardware - compatibility is only guaranteed with i386/x86_64. The profile should be stored in a secure space on your FS, ideally only accessible by root.
+With the loss of public Grsecurity, there is almost no other mechanism available to protect the kernel. Not even selinux can protect against many kernel exploits, which makes reducing the attack surface area more important than ever. The default docker profile reduces 315+ available system calls to around 265, with many of the dropped calls being added again based on set capabilities. The profile provided here is hand made, and reduces 315+ available system calls to 64, without the capability loophole. One caveat is that I have no way to test this profile with Arm/Arm64 hardware - compatibility is only guaranteed with i386/x86_64. The profile should be stored in a secure space on your FS, ideally only accessible by root.
 
 Profile (compressed) download page: http://s000.tinyupload.com/?file_id=09677847785606964607
 SHA256: ac39ea1cb0adba5cc0c9bd98fcaf14f989f3f6ccead202e57f22100d66955ff4

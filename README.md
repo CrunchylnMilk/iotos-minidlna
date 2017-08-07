@@ -1,7 +1,7 @@
 This is a small, Alpine-based version of the MiniDlna home media server meant to run in an extremely restricted docker container. It will serve media from a provided, read-only volume - for ease of use, a host folder can be mounted, or for increased security, a docker volume. As of now, host networking (net=host) is required in order to make auto-discovery work. User namespaces are also a goal - the container itself is compatible, but user namespaces are still incompatible with net=host.
 
 Minidlna version: 1.2.0
-Container version 1.1.3
+Container version 1.1.4
 
 Tested Security Configuration:
 - Non-root UID/GID by default
@@ -33,6 +33,6 @@ Variables:
 Seccomp profile:
 With the loss of public Grsecurity, there is almost no other mechanism available to protect the kernel. Not even selinux can protect against many kernel exploits, which makes reducing the attack surface area more important than ever. The default docker profile reduces 315+ available system calls to around 265, with many of the dropped calls being added again based on set capabilities. The profile provided here is hand made, and reduces 315+ available system calls to 64, without the capability loophole. One caveat is that I have no way to test this profile with Arm/Arm64 hardware - compatibility is only guaranteed with i386/x86_64. The profile should be stored in a secure space on your FS, ideally only accessible by root.
 
-Profile (compressed) download page: http://s000.tinyupload.com/?file_id=09677847785606964607
-SHA256: ac39ea1cb0adba5cc0c9bd98fcaf14f989f3f6ccead202e57f22100d66955ff4
-Scan results: https://www.virustotal.com/en/file/ac39ea1cb0adba5cc0c9bd98fcaf14f989f3f6ccead202e57f22100d66955ff4/analysis/1499999561/
+Profile (compressed) download page: http://s000.tinyupload.com/?file_id=36954499112233723900
+SHA256: 6ff948e86b16aa6d578fbeb6d4b2098caf12faeba8b7b68d3a8298e8532a8584
+Scan results: https://www.virustotal.com/en/file/6ff948e86b16aa6d578fbeb6d4b2098caf12faeba8b7b68d3a8298e8532a8584/analysis/1502089112/

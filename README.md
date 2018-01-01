@@ -1,7 +1,7 @@
 This is a small, Alpine-based version of the MiniDlna home media server meant to run in an extremely restricted docker container. It will serve media from a provided, read-only volume - for ease of use, a host folder can be mounted, or for increased security, a docker volume. As of now, host networking (net=host) is required in order to make auto-discovery work. User namespaces are also a goal - the container itself is compatible, but user namespaces are still incompatible with net=host.
 
-Minidlna version: 1.2.0
-Container version 1.1.4
+Minidlna version: 1.2.1
+Container version 1.1.5
 
 Tested Security Configuration:
 - Non-root UID/GID by default
